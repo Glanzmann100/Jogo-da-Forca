@@ -3,8 +3,10 @@ import random
 print("Bem Vindo ao Jogo da forca")
 
 #Indica quais palavras podem ser selecionadas, o número de tentativas e o vetor das letras
-Palavras = ['python', 'programacao', 'algoritmo', 'desenvolvimento', 'tecnologia']
-Palavra_Secreta = random.choice(Palavras)
+arq = open("palavras.txt")
+linhas = arq.readlines()
+arq.close()
+Palavra_Secreta = random.choice(linhas)
 Letras_Corretas = []
 Tentativas = 5
 
@@ -41,3 +43,4 @@ while True:
         break
     else:
         print(f"{Lista_Palavra}")
+        print("_"*20)
