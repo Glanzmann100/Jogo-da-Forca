@@ -1,4 +1,3 @@
-
 import random
 
 print("Bem Vindo ao Jogo da forca")
@@ -10,7 +9,6 @@ Tentativas = 5
 
 while True:
     print(f"Você possui {Tentativas} tentativas")
-
     Tentativa = input("Digite uma letra: ")
 
     if Tentativas < 1:
