@@ -2,16 +2,19 @@ import random
 
 print("Bem Vindo ao Jogo da forca")
 
+#Indica quais palavras podem ser selecionadas, o número de tentativas e o vetor das letras
 Palavras = ['python', 'programacao', 'algoritmo', 'desenvolvimento', 'tecnologia']
 Palavra_Secreta = random.choice(Palavras)
 Letras_Corretas = []
 Tentativas = 5
 
+#Impõe o loop que será executado
 while True:
     print(f"Você possui {Tentativas} tentativas")
     Tentativa = input("Digite uma letra: ")
 
-    if Tentativas < 1:
+#Estabelece as opções de respostas
+    if Tentativas <= 0:
         print("Você perdeu")
         break
 
@@ -24,13 +27,15 @@ while True:
         Tentativas -= 1
         print("Infelizmente você errou ")
 
+#Define a lista de letras que serão preenchidas
     Lista_Palavra = ''
     for Letra in Palavra_Secreta:
         if Letra in Letras_Corretas:
             Lista_Palavra = Lista_Palavra + Letra
         else:
             Lista_Palavra += '*'
-            
+
+#Finaliza o jogo           
     if Lista_Palavra == Palavra_Secreta:
         print(f"Fim de jogo! A palavra era: {Palavra_Secreta}")
         break
